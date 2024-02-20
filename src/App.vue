@@ -4,19 +4,33 @@ import "./assets/main.css"
 </script>
 
 <template>
-  <nav>
-    <form action="">
-      <input type="text" placeholder="Search..." />
-      <select name="option" id="1">
-        <option value="all">All</option>
-        <option value="title">Title</option>
-        <option value="author">Author</option>
-      <button type="submit">Search</button>
-      </select>selest>
-    </form>
-  </nav>
+  <HomePage/>
 
-  <main>
-    <HomePage/>
-  </main>
+  <div>
+    <ul v-if="results.length">
+      <li v-for="result in results" :key="result.id">
+        {{ result.title }}
+      </li>
+    </ul>
+    <p v-else>No results found</p>
+  </div>
 </template>
+
+<script>
+
+export default {
+  components: {
+    HomePage
+  },
+  data() {
+    return {
+      results: []
+    }
+  },
+  methods: {
+    updateResults(results) {
+      this.searchResults = results;
+    }
+  }
+}
+</script>
