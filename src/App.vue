@@ -7,11 +7,12 @@ import "./assets/main.css"
   <nav>
     <form action="">
       <input type="text" placeholder="Search..." />
-      <select name="" id="">
+      <select name="option" id="1">
         <option value="all">All</option>
         <option value="title">Title</option>
         <option value="author">Author</option>
       <button type="submit">Search</button>
+      </select>selest>
     </form>
   </nav>
 
