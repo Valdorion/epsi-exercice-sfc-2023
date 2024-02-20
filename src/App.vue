@@ -22,6 +22,9 @@ export default {
   components: {
     HomePage
   },
+  props: {
+    type: Array,
+  },
   data() {
     return {
       results: []

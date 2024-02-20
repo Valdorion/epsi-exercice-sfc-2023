@@ -39,7 +39,7 @@ export default {
   methods: {
     submitSearch() {
       // Construit l'URL de recherche basée sur l'option et la requête
-      const searchURL = `https://api.deezer.com/search/${this.searchOption}&q=${this.searchQuery}`;
+      const searchURL = `https://api.deezer.com/search/&q=${this.searchQuery}`;
       // Exécute la requête GET à l'API de Deezer
       axios.get(searchURL)
         .then(response => {
