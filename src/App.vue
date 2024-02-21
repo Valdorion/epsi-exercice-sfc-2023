@@ -1,10 +1,9 @@
 <script setup>
-import HomePage from './components/HomePage.vue'
 import "./assets/main.css"
 </script>
 
 <template>
-  <HomePage/>
+  <HomePage @results-fetched="updateResults"/>
 
   <div>
     <ul v-if="results.length">
@@ -17,22 +16,20 @@ import "./assets/main.css"
 </template>
 
 <script>
+import HomePage from './components/HomePage.vue'
 
 export default {
   components: {
     HomePage
   },
-  props: {
-    type: Array,
-  },
   data() {
     return {
-      results: []
-    }
+      results: [] // Utilisez 'results' pour stocker les données récupérées
+    };
   },
   methods: {
-    updateResults(results) {
-      this.searchResults = results;
+    updateResults(newResults) {
+      this.results = newResults.data; // Met à jour 'results' avec les nouvelles données émises
     }
   }
 }
